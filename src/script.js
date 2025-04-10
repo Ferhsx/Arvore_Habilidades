@@ -6,25 +6,26 @@ const nivelDisplay = document.getElementById("nivel");
 
 const personagens = [
     {
-      nome: "Kael Ignis",
+      nome: "ex",
       cor: "#FF4500",
       ramos: {
-        Combate: ["Golpe Flamejante", "Explosão Ígnea", "Lança de Fogo"],
-        Investigação: ["Análise de Cinzas", "Visão Térmica", "Rastreamento por Calor"],
-        Poder: ["Domínio do Fogo", "Fênix Interior", "Erupção Total"]
+        Combate: ["ex", "ex", "ex"],
+        Investigação: ["ex", "ex", "ex"],
+        Poder: ["ex", "ex", "ex"]
       }
     },
     {
-      nome: "Lysa Glacius",
+      nome: "ex",
       cor: "#00BFFF",
       ramos: {
-        Combate: ["Lâmina de Gelo", "Nevasca Cortante", "Encerramento Ártico"],
-        Investigação: ["Sentir Vibrações", "Escanear Ambiente", "Mapa de Temperatura"],
-        Poder: ["Congelamento Global", "Espinhos de Gelo", "Prisão Congelante"]
+        Combate: ["ex", "ex", "ex"],
+        Investigação: ["ex", "ex", "ex"],
+        Poder: ["ex", "ex", "ex"]
       }
     }
   ];
 
   const conteiner = document.getElementById("arvConteiner");
+  
 
   
