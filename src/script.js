@@ -13,19 +13,16 @@ const personagens = [
         Investigação: ["ex", "ex", "ex"],
         Poder: ["ex", "ex", "ex"]
       }
-    },
-    {
-      nome: "ex",
-      cor: "#00BFFF",
-      ramos: {
-        Combate: ["ex", "ex", "ex"],
-        Investigação: ["ex", "ex", "ex"],
-        Poder: ["ex", "ex", "ex"]
-      }
-    }
-  ];
+  }
+];
 
   const conteiner = document.getElementById("arvConteiner");
-  
 
-  
+  (a,b,c,d,e,f,g) =>{
+    personagens.nome = a
+    personagens.cor = b
+    personagens.ramos.Combate[c,d,e]
+    personagens.ramos.Investigação[f,g,h]
+    personagens.ramos.Poder[i,j,k]
+  }
+
