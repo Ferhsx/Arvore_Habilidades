@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore de Habilidades - ignar</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+
+    <div class="botoes">
+        <a href="../index.html"> <button class="botao-home"><img
+                    src="https://static.thenounproject.com/png/2137554-200.png" alt="HOME"></button></a>
+    </div>
+
+    <h1>Árvore de Habilidades - Zarki</h1>
+    <div class="points"> Pontos Disponiveis: <span id="pontos"></span>3</div>
+    <div class="arv-contiener" id="arvConteiner"></div>
+
+    <div class="test">
+
+        <h2>Criar Personagem</h2>
+        <label>Nome: <input id="nomeInput" type="text"></label><br>
+        <label>Cor (hex): <input id="corInput" type="color" value="#ff4500"></label><br><br>
+    
+        <h4>Habilidades - Combate:</h4>
+        <div id="combateInputs">
+    
+        <input type="text" placeholder="Combate 1"><br>
+        <input type="text" placeholder="Combate 2"><br>
+        <input type="text" placeholder="Combate 3"><br><br>
+    
+        </div>
+    
+        <button type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
+    
+        <h4>Habilidades - Investigação:</h4>
+    
+        <div id="investigacaoInputs">
+    
+        <input type="text" placeholder="Investigação 1"><br>
+        <input type="text" placeholder="Investigação 2"><br>
+        <input type="text" placeholder="Investigação 3"><br><br>
+    
+        </div>
+    
+        <button type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma Habilidade</button>
+    
+        <h4>Habilidades - Poder:</h4>
+    
+        <div id="poderInputs">
+    
+        <input type="text" placeholder="Poder 1"><br>
+        <input type="text" placeholder="Poder 2"><br>
+        <input type="text" placeholder="Poder 3"><br><br>
+    
+        </div>
+    
+        <button type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma Habilidade</button><br></br>
+    
+        <button type="button" onclick="criarPersonagem()">Criar Personagem</button>
+    
+        </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
