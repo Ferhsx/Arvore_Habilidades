@@ -1,11 +1,14 @@
-  let pontosDisponiveis = 3;
+  let pontosDisponiveis = 10;
   let nivel = 1;
   const habilidadesAtivas = new Set();
 
+  
   const pontosDisplay = document.getElementById("pontos");
   const nivelDisplay = document.getElementById("nivel");
   const container = document.getElementById("arvConteiner");
   const teste = document.querySelector('.test');
+
+  pontosDisplay.textContent = pontosDisponiveis;
 
   function subirNivel() {
     nivel++;
