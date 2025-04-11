@@ -18,6 +18,7 @@ h1 {
 header {
     padding: 10px;
     border: #fff solid 1px;
+    box-shadow: 1px 1px 10px white;
 }
 
 .box {
@@ -44,6 +45,7 @@ header {
     top: -26.945px;
     left: 7.4%;
     transform: rotate(45deg);
+    box-shadow: 1px 1px 10px white;
     z-index: 2;
 }
 
@@ -55,6 +57,11 @@ header {
     width: 1000px;
     justify-content: space-around;
 }
+
+#zarki:hover{
+    
+}
+
 
 .botao {
     width: 150px;
