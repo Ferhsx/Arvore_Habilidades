@@ -123,3 +123,6 @@
     tree.appendChild(branchesWrapper);
     container.appendChild(tree);
   }
+
+//começo da arvore de habilidade
+
