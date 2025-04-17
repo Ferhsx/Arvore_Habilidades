@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árvore de Habilidades - ignar</title>
-    <link rel="stylesheet" type="text/css" href="/Arvore_Habilidades/src/style.css">
-    <link rel="stylesheet" type="text/css" href="/Arvore_Habilidades/src/personagens/Água/agua.css">
+    <link rel="stylesheet" type="text/css" href="/src/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/personagens/Água/agua.css">
 </head>
 
 <body>
@@ -26,47 +26,61 @@
         <h2>Criar Personagem</h2>
         <label>Nome: <input id="nomeInput" type="text" class="bonito"></label><br>
         <label>Cor (hex): <input id="corInput" type="color" value="#ff4500" class="cor"></label><br><br>
-    
-        <h4>Habilidades - Combate:</h4>
-        <div id="combateInputs" class="bonito">
-    
-        <input class="bonito" type="text" placeholder="Combate 1"><br>
-        <input class="bonito" type="text" placeholder="Combate 2"><br>
-        <input class="bonito" type="text" placeholder="Combate 3"><br><br>
-    
-        </div>
-    
-        <button class="bonito" type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
-    
-        <h4>Habilidades - Investigação:</h4>
-    
-        <div id="investigacaoInputs" class="bonito">
-    
-        <input class="bonito" type="text" placeholder="Investigação 1"><br>
-        <input class="bonito" type="text" placeholder="Investigação 2"><br>
-        <input class="bonito" type="text" placeholder="Investigação 3"><br><br>
-    
-        </div>
-    
-        <button class="bonito" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma Habilidade</button>
-    
-        <h4>Habilidades - Poder:</h4>
-    
-        <div id="poderInputs" class="bonito">
-    
-        <input class="bonito" type="text" placeholder="Poder 1"><br>
-        <input class="bonito" type="text" placeholder="Poder 2"><br>
-        <input class="bonito" type="text" placeholder="Poder 3"><br><br>
-    
-        </div>
-    
-        <button class="bonito" type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma Habilidade</button><br></br>
-    
-        <button class="bonito" type="button" onclick="criarPersonagem()">Criar Personagem</button>
-    
+
+        <h4>Atributos do Personagem</h4>
+        <div id="atributo">
+
+            <input type="number" class="bonito" placeholder="Atributo de força"><br>
+            <input type="number" class="bonito" placeholder="Atributo de resistência"><br>
+            <input type="number" class="bonito" placeholder="Atributo de inteligencia"><br>
+            <input type="number" class="bonito" placeholder="Atributo de destreza"><br>
+            <input type="number" class="bonito" placeholder="Atributo de etter"><br>
+
         </div>
 
-    <script src="/Arvore_Habilidades/src/script.js"></script>
+
+        <h4>Habilidades - Combate:</h4>
+        <div id="combateInputs" class="bonito">
+
+            <input class="bonito" type="text" placeholder="Combate 1"><br>
+            <input class="bonito" type="text" placeholder="Combate 2"><br>
+            <input class="bonito" type="text" placeholder="Combate 3"><br><br>
+
+        </div>
+
+        <button class="bonito" type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
+
+        <h4>Habilidades - Investigação:</h4>
+
+        <div id="investigacaoInputs" class="bonito">
+
+            <input class="bonito" type="text" placeholder="Investigação 1"><br>
+            <input class="bonito" type="text" placeholder="Investigação 2"><br>
+            <input class="bonito" type="text" placeholder="Investigação 3"><br><br>
+
+        </div>
+
+        <button class="bonito" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma
+            Habilidade</button>
+
+        <h4>Habilidades - Poder:</h4>
+
+        <div id="poderInputs" class="bonito">
+
+            <input class="bonito" type="text" placeholder="Poder 1"><br>
+            <input class="bonito" type="text" placeholder="Poder 2"><br>
+            <input class="bonito" type="text" placeholder="Poder 3"><br><br>
+
+        </div>
+
+        <button class="bonito" type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma
+            Habilidade</button><br></br>
+
+        <button class="bonito" type="button" onclick="criarPersonagem()">Criar Personagem</button>
+    </div>
+    <button class="bonito" onclick="carregarAvr('agua.json')">Carregar Árvore de habilidades</button>
+
+    <script src="/src/script.js"></script>
 </body>
 
 </html>
