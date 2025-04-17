@@ -14,12 +14,13 @@
     <div class="botoes">
         <a href="/src/index.html"> <button class="botao-home"><img
                     src="https://static.thenounproject.com/png/2137554-200.png" alt="HOME"></button></a>
-        <a href="/Arvore_Habilidades/src/arvore/arvore.html"><button class="botao-arv"></button></a>
+        <a href="/src/arvore/arvore.html"><button class="botao-arv"></button></a>
     </div>
 
     <h1>Árvore de Habilidades - agua</h1>
     <div class="points"> Pontos Disponiveis: <span id="pontos"></span></div>
     <div class="arv-contiener" id="arvConteiner"></div>
+    <button class="bonito" onclick="subirNivel()">Aumentar nivel</button>
 
     <div class="test">
 
@@ -48,7 +49,7 @@
 
         </div>
 
-        <button class="bonito" type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
 
         <h4>Habilidades - Investigação:</h4>
 
@@ -60,7 +61,7 @@
 
         </div>
 
-        <button class="bonito" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma
             Habilidade</button>
 
         <h4>Habilidades - Poder:</h4>
@@ -73,12 +74,12 @@
 
         </div>
 
-        <button class="bonito" type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma
             Habilidade</button><br></br>
 
-        <button class="bonito" type="button" onclick="criarPersonagem()">Criar Personagem</button>
+        <button class="botaoAgua" type="button" onclick="criarPersonagem()">Criar Personagem</button>
     </div>
-    <button class="bonito" onclick="carregarAvr('agua.json')">Carregar Árvore de habilidades</button>
+    <button class="bonito" onclick="desenharArvore('arvore')">Carregar Árvore de habilidades</button>
 
     <script src="/src/script.js"></script>
 </body>

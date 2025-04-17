@@ -34,7 +34,8 @@ function criarPersonagem() {
   const investigacao = Array.from(document.querySelectorAll('#investigacaoInputs input')).map(input => input.value);
   const poder = Array.from(document.querySelectorAll('#poderInputs input')).map(input => input.value);
 
-  const atrbInputs = document.querySelectorAll('#atributo input');
+  const atributoContainer = document.getElementById('atributo');
+  const atrbInputs = atributoContainer.querySelectorAll('input');
   const atrb = {
     forca: parseInt(atrbInputs[0].value) || 0,
     resis: parseInt(atrbInputs[1].value) || 0,
@@ -42,6 +43,10 @@ function criarPersonagem() {
     dest: parseInt(atrbInputs[3].value) || 0,
     etter: parseInt(atrbInputs[4].value) || 0,
   };
+
+  if (atrbInputs.value > 5){
+    alert("Valor de atributo ilegal")
+  }
 
   const personagem = {
     nome: nome,
@@ -53,7 +58,6 @@ function criarPersonagem() {
       Poder: poder
     }
   };
-
 
   renderizarPersonagem(personagem);
   teste.style.display = 'none';
@@ -71,6 +75,19 @@ function renderizarPersonagem(personagem) {
   title.textContent = personagem.nome;
   ficha.appendChild(title);
 
+
+  const atributosTitulo = document.createElement("h4");
+  atributosTitulo.textContent = "Atributos";
+  ficha.appendChild(atributosTitulo);
+
+  const atributosLista = document.createElement("ul");
+  for (const chave in personagem.atributos) {
+    const item = document.createElement("li");
+    item.textContent = `${chave}: ${personagem.atributos[chave]}`;
+    atributosLista.appendChild(item);
+  }
+  ficha.appendChild(atributosLista);
+
   const ramoWrapper = document.createElement("div");
   ramoWrapper.classList.add("ficha-wrapper");
 
@@ -82,25 +99,15 @@ function renderizarPersonagem(personagem) {
     ramoTitulo.textContent = ramo;
     ramoDiv.appendChild(ramoTitulo);
 
-    const atributosTitulo = document.createElement("h4");
-    atributosTitulo.textContent = "Atributos";
-    ficha.appendChild(atributosTitulo);
+    ramoWrapper.appendChild(ramoDiv);
+  
 
-    const atributosLista = document.createElement("ul");
-    for (const chave in personagem.atributos) {
-      const item = document.createElement("li");
-      item.textContent = `${chave}: ${personagem.atributos[chave]}`;
-      atributosLista.appendChild(item);
-    }
-    ficha.appendChild(atributosLista);
-
-
-    personagem.ramos[ramo].forEach((habilidade) => {
-      const textoHab = document.createElement("p");
-      textoHab.textContent = habilidade || "(vazio)";
-      textoHab.classList.add("habilidade-texto");
-      ramoDiv.appendChild(textoHab);
-    });
+  personagem.ramos[ramo].forEach((habilidade) => {
+    const textoHab = document.createElement("p");
+    textoHab.textContent = habilidade || "(vazio)";
+    textoHab.classList.add("habilidade-texto");
+    ramoDiv.appendChild(textoHab);
+  });
 
     ramoWrapper.appendChild(ramoDiv);
   }
@@ -108,7 +115,6 @@ function renderizarPersonagem(personagem) {
   ficha.appendChild(ramoWrapper);
   container.appendChild(ficha);
 }
-
 
 //começo da arvore de habilidade
 

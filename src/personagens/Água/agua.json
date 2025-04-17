@@ -1,0 +1,11 @@
+{
+    "nome" : "Fogo",
+    "cor": "#ff4d00",
+  "inicio": { "id": "f1", "nome": "Chama Inicial" },
+  "habilidades": [
+    { "id": "f1", "nome": "Chama Inicial", "pos": { "x": 100, "y": 100 }, "conexoes": ["f2", "f3"] },
+    { "id": "f2", "nome": "Explosão Curta", "pos": { "x": 200, "y": 50 }, "conexoes": ["f4"] },
+    { "id": "f3", "nome": "Mãos Incandescentes", "pos": { "x": 200, "y": 150 }, "conexoes": [] },
+    { "id": "f4", "nome": "Erupção", "pos": { "x": 300, "y": 100 }, "conexoes": [] }
+  ]
+}
