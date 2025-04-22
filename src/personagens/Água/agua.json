@@ -1,11 +1,272 @@
 {
-    "nome" : "Fogo",
-    "cor": "#ff4d00",
-  "inicio": { "id": "f1", "nome": "Chama Inicial" },
-  "habilidades": [
-    { "id": "f1", "nome": "Chama Inicial", "pos": { "x": 100, "y": 100 }, "conexoes": ["f2", "f3"] },
-    { "id": "f2", "nome": "Explosão Curta", "pos": { "x": 200, "y": 50 }, "conexoes": ["f4"] },
-    { "id": "f3", "nome": "Mãos Incandescentes", "pos": { "x": 200, "y": 150 }, "conexoes": [] },
-    { "id": "f4", "nome": "Erupção", "pos": { "x": 300, "y": 100 }, "conexoes": [] }
+  "nodes": [
+   
+    {
+      "id": "agua_start",
+      "name": "Fonte Interior",
+      "description": "O ponto inicial do domínio aquático. Desbloqueia o acesso à árvore.",
+      "type": "start",
+      "cost": 0,
+      "position": {"x": 400, "y": 50}
+    },
+
+   
+    {
+      "id": "agua_imp_potencia1",
+      "name": "Potência Fluida I",
+      "description": "Aumenta o impacto base das suas habilidades aquáticas. (+1d4 no efeito principal. Declarar habilidade alvo ao pegar).",
+      "type": "skill_improvement",
+      "cost": 1,
+      "position": {"x": 200, "y": 150}
+    },
+    {
+      "id": "agua_pas_afinidade1",
+      "name": "Afinidade Aquática I",
+      "description": "Sua conexão inicial com a água se aprofunda. (+1 Etter)",
+      "type": "passive_attribute",
+      "attribute": "Etter",
+      "value": 1,
+      "cost": 1,
+      "position": {"x": 400, "y": 150}
+    },
+    {
+      "id": "agua_imp_eficiencia1",
+      "name": "Eficiência Básica",
+      "description": "Otimiza o uso inicial de Etter. (Reduz o custo de PE em 1, min 1. Declarar habilidade alvo).",
+      "type": "cost_reduction",
+      "cost": 1,
+      "position": {"x": 600, "y": 150}
+    },
+
+    
+    {
+      "id": "agua_imp_potencia2",
+      "name": "Potência Fluida II",
+      "description": "Aumenta ainda mais o impacto. (+1d6 no efeito principal, substitui I. Requer Potência Fluida I).",
+      "type": "skill_improvement",
+      "cost": 2,
+      "position": {"x": 100, "y": 250}
+    },
+    {
+      "id": "agua_add_impacto1",
+      "name": "Impacto Pesado",
+      "description": "Adiciona força concussiva à água. (Adiciona efeito [Empurrão Leve]. Declarar habilidade alvo. Requer Potência Fluida I).",
+      "type": "effect_addition",
+      "cost": 2,
+      "position": {"x": 300, "y": 250}
+    },
+    
+    {
+      "id": "agua_pas_resiliencia1",
+      "name": "Resiliência Hídrica",
+      "description": "Seu corpo se adapta melhor à essência aquática. (+1 Resistência. Requer Afinidade Aquática I).",
+      "type": "passive_attribute",
+      "attribute": "Resis",
+      "value": 1,
+      "cost": 2,
+      "position": {"x": 400, "y": 250}
+    },
+
+    {
+      "id": "agua_imp_controle1",
+      "name": "Controle Fino I",
+      "description": "Aumenta a precisão da manipulação. (Permite moldar a água com mais detalhe ou aumentar levemente o alcance. Declarar habilidade alvo. Requer Eficiência Básica).",
+      "type": "skill_improvement",
+      "cost": 2,
+      "position": {"x": 500, "y": 250}
+    },
+     {
+      "id": "agua_imp_eficiencia2",
+      "name": "Fluxo Contínuo",
+      "description": "Melhora ainda mais a canalização de Etter. (Reduz o custo de PE em mais 1, min 1. Declarar habilidade alvo. Requer Eficiência Básica).",
+      "type": "cost_reduction",
+      "cost": 2,
+      "position": {"x": 700, "y": 250}
+    },
+
+   
+    {
+      "id": "agua_imp_potencia3",
+      "name": "Potência Fluida III",
+      "description": "O poder bruto da água se manifesta. (+1d8 no efeito principal, substitui II. Requer Potência Fluida II).",
+      "type": "skill_improvement",
+      "cost": 3,
+      "position": {"x": 100, "y": 350}
+    },
+    {
+      "id": "agua_add_area1",
+      "name": "Ampliar Manifestação",
+      "description": "Expande a área de efeito das suas habilidades. (Aumenta a área ou número de alvos afetados. Declarar habilidade alvo. Requer Impacto Pesado ou Potência Fluida II).",
+      "type": "skill_improvement",
+      "cost": 3,
+      "position": {"x": 250, "y": 350}
+    },
+
+    {
+        "id": "agua_pas_vitalidade1",
+        "name": "Vitalidade Aquática",
+        "description": "A água revigora sua constituição. (+5 PV Máximo. Requer Resiliência Hídrica).",
+        "type": "passive_attribute",
+        "attribute": "Vida",
+        "value": 5,
+        "cost": 2,
+        "position": {"x": 400, "y": 350}
+    },
+  
+    {
+        "id": "agua_add_lentidao1",
+        "name": "Correnteza Fria",
+        "description": "Infunde suas habilidades com frio entorpecente. (Adiciona efeito [Lentidão]. Declarar habilidade alvo. Requer Controle Fino I).",
+        "type": "effect_addition",
+        "cost": 3,
+        "position": {"x": 500, "y": 350}
+    },
+    {
+        "id": "agua_pas_percepcao1",
+        "name": "Percepção Aquática",
+        "description": "Sente as vibrações através da água. (Bônus passivo em testes de percepção relacionados à água/umidade. Requer Controle Fino I ou Resiliência Hídrica).",
+        "type": "passive_utility",
+        "cost": 2,
+        "position": {"x": 600, "y": 350}
+    },
+    {
+      "id": "agua_unlock_concept1",
+      "name": "Despertar Nova Maré",
+      "description": "Sua compreensão da água permite uma nova forma de manifestação. (Permite definir uma nova Habilidade Conceitual básica com o Mestre. Requer Eficiência II ou Controle Fino I).",
+      "type": "concept_unlock",
+      "cost": 4,
+      "position": {"x": 700, "y": 350}
+    },
+
+
+    {
+      "id": "agua_imp_potencia4",
+      "name": "Fúria da Maré",
+      "description": "Libera um poder devastador. (+1d10 no efeito principal, substitui III. Requer Potência Fluida III).",
+      "type": "skill_improvement",
+      "cost": 4,
+      "position": {"x": 100, "y": 450}
+    },
+    {
+      "id": "agua_mod_penetrante1",
+      "name": "Fluxo Penetrante",
+      "description": "A água encontra brechas na defesa. (Permite ignorar parte da armadura/resistência do alvo. Declarar habilidade alvo. Requer Ampliar Manifestação ou Potência Fluida III).",
+      "type": "skill_modification", 
+      "cost": 3,
+      "position": {"x": 250, "y": 450}
+    },
+    {
+        "id": "agua_pas_defesa1",
+        "name": "Escudo de Umidade",
+        "description": "Uma camada passiva de umidade protege você. (Concede pequena resistência a dano de Fogo passivamente. Requer Vitalidade Aquática).",
+        "type": "passive_defense",
+        "cost": 3,
+        "position": {"x": 400, "y": 450}
+    },
+    {
+        "id": "agua_add_congelar1",
+        "name": "Toque Congelante",
+        "description": "O frio se intensifica a ponto de congelar. (Adiciona efeito [Congelamento Leve/Imobilizar]. Declarar habilidade alvo. Requer Correnteza Fria).",
+        "type": "effect_addition",
+        "cost": 4,
+        "position": {"x": 500, "y": 450}
+    },
+    {
+      "id": "agua_pas_afinidade2",
+      "name": "Afinidade Aquática II",
+      "description": "Sua sintonia com a água é quase perfeita. (+1 Etter. Requer Vitalidade Aquática ou Percepção Aquática).",
+      "type": "passive_attribute",
+      "attribute": "Etter",
+      "value": 1,
+      "cost": 3,
+      "position": {"x": 600, "y": 450}
+    },
+    {
+      "id": "agua_imp_eficiencia3",
+      "name": "Maestria da Eficiência",
+      "description": "Canaliza Etter com o mínimo esforço. (Reduz o custo de PE em mais 1 ou 2, min 1. Declarar habilidade alvo. Requer Despertar Nova Maré ou Fluxo Contínuo).",
+      "type": "cost_reduction",
+      "cost": 4,
+      "position": {"x": 700, "y": 450}
+    },
+
+
+   
+    {
+      "id": "agua_cap_maremoto",
+      "name": "Domínio do Maremoto",
+      "description": "Combina poder e área de forma avassaladora. (Melhoria final de Potência/Área. Declarar habilidade alvo. Requer Fúria da Maré ou Fluxo Penetrante).",
+      "type": "skill_improvement",
+      "cost": 5,
+      "position": {"x": 175, "y": 550}
+    },
+    {
+      "id": "agua_cap_regeneracao",
+      "name": "Regeneração Aquática",
+      "description": "A água restaura sua vitalidade lentamente. (Concede regeneração passiva de PV fora de combate. Requer Escudo de Umidade).",
+      "type": "passive_defense",
+      "cost": 4,
+      "position": {"x": 400, "y": 550}
+    },
+    {
+      "id": "agua_cap_controle",
+      "name": "Prisão Glacial",
+      "description": "Controle absoluto sobre o movimento através do gelo. (Melhoria final de Controle/Congelamento. Declarar habilidade alvo. Requer Toque Congelante).",
+      "type": "effect_addition",
+      "cost": 5,
+      "position": {"x": 500, "y": 550}
+    },
+    {
+      "id": "agua_unlock_concept2",
+      "name": "Forma Fluida Suprema",
+      "description": "Transcende a manipulação básica, alcançando uma nova compreensão. (Permite definir uma Habilidade Conceitual avançada com o Mestre. Requer Afinidade Aquática II ou Maestria da Eficiência).",
+      "type": "concept_unlock",
+      "cost": 5,
+      "position": {"x": 650, "y": 550}
+    }
+  ],
+
+
+  "connections": [
+    {"from": "agua_start", "to": "agua_imp_potencia1"},
+    {"from": "agua_start", "to": "agua_pas_afinidade1"},
+    {"from": "agua_start", "to": "agua_imp_eficiencia1"},
+
+    
+    {"from": "agua_imp_potencia1", "to": "agua_imp_potencia2"},
+    {"from": "agua_imp_potencia1", "to": "agua_add_impacto1"},
+    {"from": "agua_pas_afinidade1", "to": "agua_pas_resiliencia1"},
+    {"from": "agua_imp_eficiencia1", "to": "agua_imp_controle1"},
+    {"from": "agua_imp_eficiencia1", "to": "agua_imp_eficiencia2"},
+
+    
+    {"from": "agua_imp_potencia2", "to": "agua_imp_potencia3"},
+    {"from": "agua_imp_potencia2", "to": "agua_add_area1"},
+    {"from": "agua_add_impacto1", "to": "agua_add_area1"}, 
+    {"from": "agua_pas_resiliencia1", "to": "agua_pas_vitalidade1"},
+    {"from": "agua_pas_resiliencia1", "to": "agua_pas_percepcao1"}, 
+    {"from": "agua_imp_controle1", "to": "agua_add_lentidao1"},
+    {"from": "agua_imp_controle1", "to": "agua_pas_percepcao1"}, 
+    {"from": "agua_imp_eficiencia2", "to": "agua_unlock_concept1"},
+    {"from": "agua_imp_controle1", "to": "agua_unlock_concept1"}, 
+
+   
+    {"from": "agua_imp_potencia3", "to": "agua_imp_potencia4"},
+    {"from": "agua_imp_potencia3", "to": "agua_mod_penetrante1"},
+    {"from": "agua_add_area1", "to": "agua_mod_penetrante1"},
+    {"from": "agua_pas_vitalidade1", "to": "agua_pas_defesa1"},
+    {"from": "agua_pas_vitalidade1", "to": "agua_pas_afinidade2"}, 
+    {"from": "agua_add_lentidao1", "to": "agua_add_congelar1"},
+    {"from": "agua_pas_percepcao1", "to": "agua_pas_afinidade2"}, 
+    {"from": "agua_unlock_concept1", "to": "agua_imp_eficiencia3"},
+    {"from": "agua_imp_eficiencia2", "to": "agua_imp_eficiencia3"}, 
+
+
+    {"from": "agua_imp_potencia4", "to": "agua_cap_maremoto"},
+    {"from": "agua_mod_penetrante1", "to": "agua_cap_maremoto"},
+    {"from": "agua_pas_defesa1", "to": "agua_cap_regeneracao"},
+    {"from": "agua_add_congelar1", "to": "agua_cap_controle"},
+    {"from": "agua_pas_afinidade2", "to": "agua_unlock_concept2"},
+    {"from": "agua_imp_eficiencia3", "to": "agua_unlock_concept2"}
   ]
 }

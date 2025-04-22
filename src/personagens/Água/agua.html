@@ -7,6 +7,8 @@
     <title>Árvore de Habilidades - ignar</title>
     <link rel="stylesheet" type="text/css" href="/src/style.css">
     <link rel="stylesheet" type="text/css" href="/src/personagens/Água/agua.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 </head>
 
 <body>
@@ -14,12 +16,20 @@
     <div class="botoes">
         <a href="/src/index.html"> <button class="botao-home"><img
                     src="https://static.thenounproject.com/png/2137554-200.png" alt="HOME"></button></a>
-        <a href="/src/arvore/arvore.html"><button class="botao-arv"></button></a>
     </div>
 
     <h1>Árvore de Habilidades - agua</h1>
     <div class="points"> Pontos Disponiveis: <span id="pontos"></span></div>
-    <div class="arv-contiener" id="arvConteiner"></div>
+    <div id="skillTreeContainer" style="width: 100%; height: 600px; border: 1px solid #ccc; background-color: #f4f4f4; position: relative;">
+    <!-- Cytoscape vai desenhar aqui -->
+</div>
+
+
+    <button class="bonito" onclick="desenharArvore('agua')">Carregar Árvore de habilidades</button>
+    <hr>
+    <div id="characterSheetDisplay">
+        <!-- A ficha do personagem renderizada por renderizarPersonagem virá aqui -->
+   </div>
     <button class="bonito" onclick="subirNivel()">Aumentar nivel</button>
 
     <div class="test">
@@ -79,7 +89,6 @@
 
         <button class="botaoAgua" type="button" onclick="criarPersonagem()">Criar Personagem</button>
     </div>
-    <button class="bonito" onclick="desenharArvore('arvore')">Carregar Árvore de habilidades</button>
 
     <script src="/src/script.js"></script>
 </body>
