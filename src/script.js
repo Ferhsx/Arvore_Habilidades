@@ -158,8 +158,11 @@ function renderizarPersonagem(personagem) {
 function capitalizeFirstLetter(string) {
     if (!string) return string;
     if (string.toLowerCase() === 'agua') return 'Água';
-    // Adicionar mapeamentos para outras raças/elementos com acentos ou capitalização especial
+    if (string.toLowerCase() === 'fogo') return 'Fogo';
+    if (string.toLowerCase() === 'terra') return 'Terra';
+    if (string.toLowerCase() === 'vento') return 'Vento';
     if (string.toLowerCase() === 'raios') return 'Raios'; // Exemplo
+    if (string.toLowerCase() === 'zenidio') return 'Zenidio';
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
