@@ -1,3 +1,27 @@
 {
-    
+    "nodes":[
+
+        {
+            "id": "fogo_start",
+            "name": "Fonte Interior",
+            "description": "O ponto inicial do domínio aquático. Desbloqueia o acesso à árvore.",
+            "type": "start",
+            "cost": 0,
+            "position": {"x": 400, "y": 50}
+        },
+
+        {
+            "id": "fogo_ex",
+            "name": "Potência Fluida I",
+            "description": "Aumenta o impacto base das suas habilidades aquáticas. (+1d4 no efeito principal. Declarar habilidade alvo ao pegar).",
+            "type": "skill_improvement",
+            "cost": 1,
+            "position": {"x": 200, "y": 150}
+        }
+
+    ],
+
+    "connections": [
+        {"from": "fogo_start", "to": "fogo_ex"}
+    ]
 }
