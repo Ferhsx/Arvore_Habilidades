@@ -25,7 +25,7 @@ if (pontosDisplay) {
 
 
 // ========================================
-// Funções da Ficha (Já existentes)
+// Funções da Ficha 
 // ========================================
 
 function subirNivel() {
