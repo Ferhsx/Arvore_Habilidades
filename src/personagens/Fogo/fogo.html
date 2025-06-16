@@ -7,6 +7,7 @@
     <title>Árvore de Habilidades - ignar</title>
     <link rel="stylesheet" type="text/css" href="/src/style.css">
     <link rel="stylesheet" type="text/css" href="/src/personagens/Fogo/fogo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,15 @@
     <div class="points"> Pontos Disponiveis: <span id="pontos"></span></div>
     <div class="arv-contiener" id="arvConteiner"></div>
 
+    <div id="skillTreeContainer" style="width: 100%; height: 600px; border: 1px solid #ccc; background-color: #f4f4f4; position: relative;">
+        <!-- Cytoscape vai desenhar aqui -->
+    </div>
+
+    <button class="bonito" onclick="desenharArvore('fogo')">Carregar Árvore de habilidades</button>
+    <hr>
+
     <div class="test">
+
 
         <h2>Criar Personagem</h2>
         <label>Nome: <input id="nomeInput" type="text" class="bonito"></label><br>
@@ -65,13 +74,8 @@
     
         </div>
 
-        <div id="skillTreeContainer" style="width: 100%; height: 600px; border: 1px solid #ccc; background-color: #f4f4f4; position: relative;">
-            <!-- Cytoscape vai desenhar aqui -->
-        </div>
         
         
-            <button class="bonito" onclick="desenharArvore('fogo')">Carregar Árvore de habilidades</button>
-            <hr>
             <div id="characterSheetDisplay">
                 <!-- A ficha do personagem renderizada por renderizarPersonagem virá aqui -->
            </div>
