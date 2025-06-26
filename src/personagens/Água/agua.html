@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Árvore de Habilidades - ignar</title>
+    <title>Árvore de Habilidades - Água</title> <!-- Título corrigido -->
     <link rel="stylesheet" type="text/css" href="/src/style.css">
     <link rel="stylesheet" type="text/css" href="/src/personagens/Água/agua.css">
 
@@ -18,79 +18,68 @@
                     src="https://static.thenounproject.com/png/2137554-200.png" alt="HOME"></button></a>
     </div>
 
-    <h1>Árvore de Habilidades - agua</h1>
-    <div class="points"> Pontos Disponiveis: <span id="pontos"></span></div>
+    <h1>Árvore de Habilidades - Água</h1>
+    <div class="points"> Nível: <span id="nivel">1</span> | Pontos Disponíveis: <span id="pontos"></span></div>
     <div id="skillTreeContainer" style="width: 100%; height: 600px; border: 1px solid #ccc; background-color: #252525; position: relative;">
-    <!-- Cytoscape vai desenhar aqui -->
-</div>
+        <!-- Cytoscape vai desenhar aqui -->
+    </div>
 
-
-    <button class="bonito" onclick="desenharArvore('agua')">Carregar Árvore de habilidades</button>
+    <!-- Removido o botão de carregar árvore, faremos isso automaticamente -->
     <hr>
     <div id="characterSheetDisplay">
         <!-- A ficha do personagem renderizada por renderizarPersonagem virá aqui -->
-   </div>
-    <button class="bonito" onclick="subirNivel()">Aumentar nivel</button>
+    </div>
+    <button class="bonito" onclick="subirNivel()">Subir de Nível (+3 Pontos)</button>
 
     <div class="test">
 
-        <h2>Criar Personagem</h2>
+        <h2>Criar Personagem Elemental de Água</h2>
         <label>Nome: <input id="nomeInput" type="text" class="bonito"></label><br>
-        <label>Cor (hex): <input id="corInput" type="color" value="#ff4500" class="cor"></label><br><br>
+        <label>Cor (hex): <input id="corInput" type="color" value="#00BFFF" class="cor"></label><br><br>
 
-        <h4>Atributos do Personagem</h4>
+        <h4>Atributos Base do Personagem (Regra: Elementais começam com Força: 1, Resistência: 1, Destreza: 2, Inteligência: 2, Carisma: 1, Etter: 2)</h4>
         <div id="atributo">
-
-            <input type="number" class="bonito" placeholder="Atributo de força"><br>
-            <input type="number" class="bonito" placeholder="Atributo de resistência"><br>
-            <input type="number" class="bonito" placeholder="Atributo de inteligencia"><br>
-            <input type="number" class="bonito" placeholder="Atributo de destreza"><br>
-            <input type="number" class="bonito" placeholder="Atributo de etter"><br>
-
+            <!-- Valores base para Elementais, conforme PDF. O jogador pode customizar depois. -->
+            <input type="number" class="bonito" placeholder="Força" value="1"><br>
+            <input type="number" class="bonito" placeholder="Resistência" value="1"><br>
+            <input type="number" class="bonito" placeholder="Inteligência" value="2"><br>
+            <input type="number" class="bonito" placeholder="Destreza" value="2"><br>
+            <input type="number" class="bonito" placeholder="Etter" value="2"><br>
+            <!-- NOVO: Adicionado campo para Carisma -->
+            <input type="number" class="bonito" placeholder="Carisma" value="1"><br>
         </div>
 
 
-        <h4>Habilidades - Combate:</h4>
+        <h4>Habilidades Manuais - Combate:</h4>
         <div id="combateInputs" class="bonito">
-
-            <input class="bonito" type="text" placeholder="Combate 1"><br>
-            <input class="bonito" type="text" placeholder="Combate 2"><br>
-            <input class="bonito" type="text" placeholder="Combate 3"><br><br>
-
+            <input class="bonito" type="text" placeholder="Habilidade de Combate 1"><br>
         </div>
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('combateInputs')">+ Habilidade de Combate</button>
 
-        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('combateInputs')">+ Uma Habilidade</button>
-
-        <h4>Habilidades - Investigação:</h4>
-
+        <h4>Habilidades Manuais - Investigação:</h4>
         <div id="investigacaoInputs" class="bonito">
-
-            <input class="bonito" type="text" placeholder="Investigação 1"><br>
-            <input class="bonito" type="text" placeholder="Investigação 2"><br>
-            <input class="bonito" type="text" placeholder="Investigação 3"><br><br>
-
+            <input class="bonito" type="text" placeholder="Habilidade de Investigação 1"><br>
         </div>
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Habilidade de Investigação</button>
 
-        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('investigacaoInputs')">+ Uma
-            Habilidade</button>
-
-        <h4>Habilidades - Poder:</h4>
-
+        <h4>Habilidades Manuais - Poder:</h4>
         <div id="poderInputs" class="bonito">
-
-            <input class="bonito" type="text" placeholder="Poder 1"><br>
-            <input class="bonito" type="text" placeholder="Poder 2"><br>
-            <input class="bonito" type="text" placeholder="Poder 3"><br><br>
-
+            <input class="bonito" type="text" placeholder="Habilidade de Poder 1"><br>
         </div>
+        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('poderInputs')">+ Habilidade de Poder</button><br><br>
 
-        <button class="botaoAgua" type="button" onclick="adicionarHabilidade('poderInputs')">+ Uma
-            Habilidade</button><br></br>
-
-        <button class="botaoAgua" type="button" onclick="criarPersonagem()">Criar Personagem</button>
+        <button class="botaoAgua" type="button" onclick="criarPersonagem()">Criar Personagem e Iniciar</button>
     </div>
 
     <script src="/src/script.js"></script>
+    <script>
+        // NOVO: Carrega a árvore assim que a página estiver pronta.
+        document.addEventListener('DOMContentLoaded', function() {
+            // A árvore só será desenhada após a criação do personagem.
+            // O botão "Criar Personagem" agora também chamará desenharArvore.
+            console.log("Página pronta. Crie um personagem para carregar a árvore.");
+        });
+    </script>
 </body>
 
 </html>
